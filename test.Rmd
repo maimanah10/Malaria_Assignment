@@ -7,6 +7,7 @@ date: "2022-09-20"
 
 ```{r warning=FALSE, message=FALSE}
 library(knitr)
+
 ```
 
 
@@ -15,23 +16,24 @@ url <- "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/dat
 data1 <- read.csv(url)
 dim(data1)
 names(data1)
+
 url2 <- "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-11-13/malaria_deaths_age.csv"
 data2 <- read.csv(url2)
 dim(data2)
 names(data2)
+
 ```
 
 
 
 
 
-## Here are my Plots ##
+here is my Plots
 
 ```{r}
 barplot(data1$Deaths...Malaria...Sex..Both...Age..Age.standardized..Rate...per.100.000.people., names.arg = data1$Year)
 ```
-
-### There is no trend for Global Malaria Deaths between 1990 ~ 2016, with unfiltered data. ###
+There is no trend for Global Malaria Deaths between 1990 ~ 2016, with unfiltered data.
 
 
 ```{r}
@@ -43,29 +45,26 @@ filter3 <- data2[data2$entity %in% c("Uganda"),  ]
 names(filter3)
 filter4 <- filter3[filter3$year %in% c("1990"),  ]
 names(filter4)
+
 ```
 ```{r}
 barplot(filter1$Deaths...Malaria...Sex..Both...Age..Age.standardized..Rate...per.100.000.people., names.arg = filter1$Entity,
         main = "Year 1990")
-```
 
-### Boxplot of Malaria Deaths in 1990 across the globe. Highest peak is the country of **Uganda**.###
+```
+Boxplot of Malaria Deaths in 1990 across the globe. Highest peak is the country of Uganda.
 
 
 ```{r}
 barplot(filter2$Deaths...Malaria...Sex..Both...Age..Age.standardized..Rate...per.100.000.people., names.arg = filter2$Year,
         main = "Uganda")
-```
 
-### Focusing on Uganda only, there is a downtrend of Malaria deaths from 1990 to 2016, with advancement of knowledge and medical facilities. ###
+```
+Focusing on Uganda only, there is a downtrend of Malaria deaths from 1990 to 2016, with advancement of knowledge and medical facilities.
 
 ```{r}
 barplot(filter3$deaths, names.arg = filter3$age_group,
         main = "Uganda Age Group Malaria 1990~2016")
 ```
-
-### Uganda Age-group of Malaria deaths, is extremely high for children **under age of 5**. Focus group to manage wil be under 5. ###
-
-
-The End.
+Uganda Age-group of Malaria deaths, is extremely high for children under age of 5. Focus group to manage wil be under 5.
 
