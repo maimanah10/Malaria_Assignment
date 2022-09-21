@@ -1,0 +1,27 @@
+---
+title: "PartOne_Maimanah_MalariaDeath"
+output: html_document
+date: "2022-09-20"
+---
+#########################################
+
+url <- "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-11-13/malaria_deaths.csv"
+data1 <- read.csv(url)
+dim(data1)
+names(data1)
+
+url2 <- "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018/2018-11-13/malaria_deaths_age.csv"
+data2 <- read.csv(url2)
+dim(data2)
+names(data2)
+
+
+here is my scatterplot
+
+```{r}
+barplot(data1$Deaths,
+        names.arg= data1$Year,
+       )
+```
+
+
