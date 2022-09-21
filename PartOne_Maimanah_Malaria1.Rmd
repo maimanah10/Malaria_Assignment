@@ -19,9 +19,31 @@ names(data2)
 here is my scatterplot
 
 ```{r}
-barplot(data1$Deaths,
-        names.arg= data1$Year,
-       )
+barplot(data1$Deaths...Malaria...Sex..Both...Age..Age.standardized..Rate...per.100.000.people., names.arg = data1$Year)
 ```
 
+```{r}
+filter1 <- data1[data1$Year %in%c("1990"),  ]
+names(filter1)
+filter2 <- data1[data1$Entity %in% c("Uganda"),  ]
+names(filter2)
+filter3 <- data2[data2$entity %in% c("Uganda"),  ]
+names(filter3)
+filter4 <- filter3[filter3$year %in% c("1990"),  ]
+names(filter4)
+
+```
+```{r}
+barplot(filter1$Deaths...Malaria...Sex..Both...Age..Age.standardized..Rate...per.100.000.people., names.arg = filter1$Entity,
+        main = "Year 1990")
+```
+
+```{r}
+barplot(filter2$Deaths...Malaria...Sex..Both...Age..Age.standardized..Rate...per.100.000.people., names.arg = filter2$Year,
+        main = "Uganda")
+```
+```{r}
+barplot(filter3$deaths, names.arg = filter3$age_group,
+        main = "Uganda Age Group Malaria 1990~2016")
+```
 
